@@ -71,7 +71,11 @@ in
 
         "$mod, C, killactive"
         "$mod, S, exec, rofi -show drun"
-	    "$mod, V, togglefloating"
+        "$mod, V, togglefloating"
+
+        
+	    ",code:118, exec, grim - | wl-copy"
+
 	]
 	      ++ (
         # workspaces
