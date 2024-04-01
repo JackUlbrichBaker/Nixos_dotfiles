@@ -90,6 +90,7 @@
     networkmanagerapplet
     pipes
     cbonsai
+    base16-shell-preview
   ];
 
 
