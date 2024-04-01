@@ -1,16 +1,6 @@
 { config, pkgs, inputs, ... }:
 
 
-  let
-    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-      ${pkgs.waybar}/bin/waybar &
-      ${pkgs.swww}/bin/swww init &
-  
-      sleep 1
-      
-      ${pkgs.swww}/bin/swww img ${ /../../home/jack/Pictures/Wallpapers/480807.jpg  } &
-    '';
-in
 
 { home.username = "jack";
   home.homeDirectory = "/home/jack";

@@ -3,5 +3,6 @@
     ./kitty.nix
     ./nvim.nix
     ./hyprland.nix
+    ./terminal.nix
   ];
 }
