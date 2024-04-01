@@ -8,7 +8,7 @@
   
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
     ];
 
  
@@ -48,14 +48,6 @@
   
  # Enable the X11 windowing system.
   
-  
-
-
-  programs.hyprland = {
-  enable = true;
-  #nvidiaPatches = true;
-  xwayland.enable = true;
-  };
 
    environment.sessionVariables = {
 
@@ -119,61 +111,13 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
   
-
-  programs.neovim = {
-    enable = true;
-    vimAlias  = true; 
-
-
-    #plugins = with pkgs.vimPlugins; [
-        #{plugin = nvim-lspconfig; }
-        #{plugin = vim-nix;}
-    #];
-  };
 
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #home-manager
-  #firefox
-  #neovim
-  #git
-  #tmux
-  #wget
-  #neofetch
-  #lolcat
-  #kitty
-  #alacritty
-  #picom
-  #gcc
-  #slack
-  #cargo
-  #rustup
-  #rofi
-  #google-chrome
-  #spotify-tui
-  #spotify
-  #xorg.xev
-  #btop
-
-  #vimPlugins.vim-packer
-  #rust-analyzer
-  #luajit
-  #shfmt
-  #solargraph
-  #sumneko-lua-language-server
-  #terraform-ls
-  #j=tree-sitter
-
-  #brightnessctl
-  #pkgs.catppuccin
-  #rofi-wayland
-  #pkgs.waybar
-  #pkgs.dunst
-  #swww
-  #networkmanagerapplet
   ];
 
 

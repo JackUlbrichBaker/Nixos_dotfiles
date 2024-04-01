@@ -13,7 +13,7 @@
        inputs.nix-colors.homeManagerModules.default
        ./features
    ];
-   colorScheme = inputs.nix-colors.colorSchemes.catppuccin-macchiato;
+   colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
   
  
 
@@ -88,6 +88,8 @@
     waybar
     dunst
     networkmanagerapplet
+    pipes
+    cbonsai
   ];
 
 

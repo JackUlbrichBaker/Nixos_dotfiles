@@ -3,8 +3,7 @@
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "JackUlbrichBaker";
-    userEmail = "jackubaker@gmail.com";
+    userName = "JackUlbrichBaker"; userEmail = "jackubaker@gmail.com";
   };
 
   # config gh to use ssh
@@ -55,6 +54,7 @@
     # set some aliases, feel free to add more or remove some
     shellAliases = {
       k = "kubectl";
+      rebuild = "sudo nixos-rebuild switch --flake /home/jack/dotfiles/nixos/#default";
     };
   };
 }
