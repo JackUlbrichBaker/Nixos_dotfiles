@@ -1,9 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 
-
-{ home.username = "jack";
-  home.homeDirectory = "/home/jack";
+{ home.username = "jack"; home.homeDirectory = "/home/jack";
 
   xresources.properties = {
     "Xcursor.size" = 16;
@@ -52,7 +50,7 @@
     stm32cubemx
 
     openfpgaloader
-    quartus-prime-lite
+    #quartus-prime-lite
     nextpnr
 
     # productivity
@@ -73,6 +71,7 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    nix-output-monitor
 
     iotop # io monitoring
     git
@@ -104,7 +103,6 @@
     cbonsai
     base16-shell-preview
     base16-universal-manager
-    base16-schemes-unstable
     themix-gui
 
   ];

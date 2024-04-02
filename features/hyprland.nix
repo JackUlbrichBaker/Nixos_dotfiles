@@ -40,7 +40,7 @@ in
     # Whether to enable hyprland-session.target on hyprland startup
     systemd.enable = true;
     settings = {
-	general = with config.colorScheme.colors; { 
+	general = with config.colorScheme.palette; { 
 	    "col.active_border" = "rgba(${base0E}ff) rgba(${base09}ff) 60deg";
 	    "col.inactive_border" = "rgba(${base00}ff)";
     
@@ -57,7 +57,7 @@ in
             
         ",code:74, exec, pamixer -i 5"
 	    ",code:73, exec, pamixer -d 5"
-	    ",code:72, exec, pamixer 0"
+	    ",code:72, exec, pamixer --toggle-mute"
 
 	    ",code:69, exec, brightnessctl s +5% &"
 	    ",code:68, exec, brightnessctl s 5% &"
