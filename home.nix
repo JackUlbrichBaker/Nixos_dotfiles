@@ -46,6 +46,15 @@
     ipcalc  # it is a calculator for the IPv4/v6 addresses
     nix-output-monitor
 
+    # Programming tools
+    stm32flash
+    stm32loader
+    stm32cubemx
+
+    openfpgaloader
+    quartus-prime-lite
+    nextpnr
+
     # productivity
     hugo # static site generator
     glow # markdown previewer in terminal
@@ -94,6 +103,10 @@
     pipes
     cbonsai
     base16-shell-preview
+    base16-universal-manager
+    base16-schemes-unstable
+    themix-gui
+
   ];
 
 
