@@ -13,8 +13,8 @@
        inputs.nix-colors.homeManagerModules.default
        ./features
    ];
-   colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-  
+   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+   
  
 
 
@@ -33,6 +33,9 @@
     xz
     unzip
     p7zip
+
+    wayland
+    hyprland
 
     swappy
     grim

@@ -14,12 +14,12 @@
      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, hyprland, ... }@inputs: {
     pkgs = import nixpkgs { config = { allowUnfree = true; }; };
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       #specialArgs = {inherit inputs; };
       modules = [
-          ./configuration.nix
+        ./configuration.nix
 
 	  home-manager.nixosModules.home-manager
           {
