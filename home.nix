@@ -5,9 +5,7 @@
 
   xresources.properties = {
     "Xcursor.size" = 16;
-    "Xft.dpi" = 172;
-  };
-   imports = [
+    "Xft.dpi" = 172; }; imports = [
        inputs.nix-colors.homeManagerModules.default
        ./features
    ];
@@ -31,9 +29,18 @@
     xz
     unzip
     p7zip
+    kdePackages.dolphin
+    libsForQt5.partitionmanager
+
+    python3
+    gtk3
+    python312Packages.numpy
+    python312Packages.pysearpc
+    rubyPackages_3_3.gdk_pixbuf2
 
     wayland
     hyprland
+    hyprlock
 
     swappy
     grim
@@ -50,12 +57,13 @@
     stm32cubemx
 
     openfpgaloader
-    #quartus-prime-lite
+    quartus-prime-lite
     nextpnr
 
     # productivity
     hugo # static site generator
     glow # markdown previewer in terminal
+    doomretro
 
     btop  # replacement of htop/nmon
     iftop # network monitoring
@@ -83,14 +91,16 @@
     alacritty
     gcc
     slack
-    cargo
+    #cargo
     pamixer
+    #rustc
 
     #rofi
     google-chrome
     spotify
     xorg.xev
     brightnessctl
+    zoom-us
 
     rtkit
     swww
@@ -101,12 +111,7 @@
     networkmanagerapplet
     pipes
     cbonsai
-    base16-shell-preview
-    base16-universal-manager
-    themix-gui
-
   ];
-
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -1,5 +1,32 @@
-{ config, pkgs, inputs, ... }:
-{
+{  pkgs,  ... }:
+
+let
+    overrides = (builtins.fromTOML (builtins.readFile ./rust-toolchain.toml));
+    libPath = with pkgs; lib.makeLibraryPath [
+      # load external libraries that you need in your rust project here
+    ];
+in
+  {
+  pkgs.mkShell = {
+    buildInputs = with pkgs; [
+      clang
+      # Replace llvmPackages with llvmPackages_X, where X is the latest LLVM version (at the time of writing, 16)
+      llvmPackages_16.bintools
+      rustup
+    ];
+
+    RUSTC_VERSION = overrides.toolchain.channel;
+    LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
+    shellHook = ''
+      export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
+      export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
+      '';
+    RUSTFLAGS = (builtins.map (a: ''-L ${a}/lib'') [
+      # add libraries here (e.g. pkgs.libvmi)
+    ]);
+
+  };
+
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
@@ -26,20 +53,6 @@
     };
   };
 
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
-  programs.alacritty = {
-    enable = true;
-    # custom settings
-    settings = {
-      env.TERM = "xterm-256color";
-      font = {
-        size = 12;
-        draw_bold_text_with_bright_colors = true;
-      };
-      scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
-    };
-  };
 
   programs.bash = {
     enable = true;
@@ -47,6 +60,11 @@
 
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      
+      function mkcd ()
+      {
+        command mkdir $1 && cd $1
+      }
 
       neofetch | lolcat
     '';

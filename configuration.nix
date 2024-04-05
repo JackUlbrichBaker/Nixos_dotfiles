@@ -5,6 +5,7 @@
 { inputs, config, pkgs, ... }:
 {
   environment.variables.TERMINAL = "kitty";
+  environment.variables.BASE16_SHELL = "~/.base16_theme";
   
   imports =
     [ # Include the results of the hardware scan.
@@ -96,7 +97,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)

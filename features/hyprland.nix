@@ -4,7 +4,7 @@
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
       ${pkgs.waybar}/bin/waybar &
       ${pkgs.swww}/bin/swww init &
-  
+
       sleep 1
       
       ${pkgs.swww}/bin/swww img ${ /../../home/jack/Pictures/Wallpapers/480807.jpg  } &
@@ -49,6 +49,7 @@ in
     exec-once = ["[workspace 1 silent] kitty"
     "[workspace 2 silent] firefox"
     "[workspace 3 silent] slack"
+    "[workspace 4 silent] google-chrome-stable"
     "${startupScript}/bin/start"
     ];
 
