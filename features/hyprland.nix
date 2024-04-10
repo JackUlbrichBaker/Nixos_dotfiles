@@ -5,7 +5,7 @@
       ${pkgs.waybar}/bin/waybar &
       ${pkgs.swww}/bin/swww init &
 
-      sleep 1
+      sleep 2
       
       ${pkgs.swww}/bin/swww img ${ /../../home/jack/Pictures/Wallpapers/480807.jpg  } &
     '';

@@ -24,6 +24,7 @@
     nnn # terminal file manager
     firefox
 
+
     # archives
     zip
     xz
@@ -91,9 +92,10 @@
     alacritty
     gcc
     slack
-    #cargo
+    cargo
     pamixer
-    #rustc
+    rustc
+    crate2nix
 
     #rofi
     google-chrome
