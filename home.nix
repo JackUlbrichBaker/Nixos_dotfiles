@@ -1,7 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
+let
+  inherit (lib) types mkOption;
+in {
 
-{ home.username = "jack"; home.homeDirectory = "/home/jack";
+ home.username = "jack"; home.homeDirectory = "/home/jack";
 
   xresources.properties = {
     "Xcursor.size" = 16;
@@ -11,7 +14,6 @@
    ];
    colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
    
- 
 
 
   # Packages that should be installed to the user profile.
@@ -23,6 +25,8 @@
     neofetch
     nnn # terminal file manager
     firefox
+    ripgrep
+    #kicad
 
 
     # archives

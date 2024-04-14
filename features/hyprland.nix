@@ -7,7 +7,7 @@
 
       sleep 2
       
-      ${pkgs.swww}/bin/swww img ${ /../../home/jack/Pictures/Wallpapers/480807.jpg  } &
+      {pkgs.swww}/bin/swww img ${ /../../home/jack/Pictures/Wallpapers/480807.jpg  } &
     '';
 in
 
