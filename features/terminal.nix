@@ -46,7 +46,6 @@
     # set some aliases, feel free to add more or remove some
     shellAliases = {
       k = "kubectl";
-      ls = "tree";
       rebuild = "sudo nixos-rebuild switch --flake /home/jack/dotfiles/nixos/#default";
     };
   };
