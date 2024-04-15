@@ -11,7 +11,8 @@ in {
     "Xft.dpi" = 96; }; 
     #"Xft.dpi" = 172; }; 
     imports = [
-       inputs.nix-colors.homeManagerModules.default
+      inputs.nix-colors.homeManagerModules.default
+      inputs.nixvim.homeManagerModules.nixvim
        ./features
    ];
    colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
@@ -46,6 +47,7 @@ in {
     python312Packages.numpy
     python312Packages.pysearpc
     rubyPackages_3_3.gdk_pixbuf2
+    lua
 
     #wayland
     #hyprland
@@ -66,7 +68,7 @@ in {
     stm32cubemx
 
     openfpgaloader
-    #quartus-prime-lite
+    quartus-prime-lite
     nextpnr
 
     # productivity
@@ -104,6 +106,7 @@ in {
     pamixer
     rustc
     crate2nix
+    rust-analyzer
 
     #rofi
     google-chrome

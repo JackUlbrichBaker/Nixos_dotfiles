@@ -35,17 +35,17 @@
       enable = true;
       package = pkgs.i3-gaps;
     };
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
+#    desktopManager = {
+#      xterm.enable = false;
+#      xfce = {
+#        enable = true;
+#        noDesktop = true;
+#        enableXfwm = false;
+#      };
+#    };
       displayManager = {
         lightdm.enable = true;
-        defaultSession = "xfce+i3";
+        #defaultSession = "xfce+i3";
       };
  };
 
