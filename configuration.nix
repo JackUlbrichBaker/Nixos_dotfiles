@@ -29,15 +29,15 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
- services.xserver = {
-   enable = true;
-   desktopManager.default = "none";
-   windowManager.default = "i3";
-   windowManager.i3 = {
-      enable = true;
-      package = pkgs.i3-gaps;
-    };
- };
+# services.xserver = {
+#   enable = true;
+#   desktopManager.default = "none";
+#   windowManager.default = "i3";
+#   windowManager.i3 = {
+#      enable = true;
+#      package = pkgs.i3-gaps;
+#    };
+# };
 
 
   # Set your time zone.

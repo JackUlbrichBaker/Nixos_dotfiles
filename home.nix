@@ -119,6 +119,8 @@ in {
     networkmanagerapplet
     pipes
     cbonsai
+    tree
+    libpcre
   ];
 
   # This value determines the home Manager release that your

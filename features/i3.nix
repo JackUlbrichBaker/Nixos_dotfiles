@@ -38,6 +38,21 @@
           notification = false;
         }
         {
+          command = "exec kitty workspace 1";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "exec google-chrome workspace 2";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "exec slack workspace 3";
+          always = true;
+          notification = false;
+        }
+        {
           command = "systemctl --user restart polybar.service";
           always = true;
           notification = false;
