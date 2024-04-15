@@ -4,7 +4,7 @@
     ./nvim.nix
     ./i3.nix
     ./picom.nix
-    ./polybar.nix
+    ./polybar/polybar.nix
     ./terminal.nix
   ];
 }

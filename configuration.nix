@@ -28,16 +28,26 @@
   networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
-
-# services.xserver = {
-#   enable = true;
-#   desktopManager.default = "none";
-#   windowManager.default = "i3";
-#   windowManager.i3 = {
-#      enable = true;
-#      package = pkgs.i3-gaps;
-#    };
-# };
+  
+  services.xserver = {
+   enable = true;
+   windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+    };
+    desktopManager = {
+      xterm.enable = false;
+      xfce = {
+        enable = true;
+        noDesktop = true;
+        enableXfwm = false;
+      };
+    };
+      displayManager = {
+        lightdm.enable = true;
+        defaultSession = "xfce+i3";
+      };
+ };
 
 
   # Set your time zone.
@@ -82,8 +92,8 @@
 #      xwayland.enable = true;
 #    };
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #xdg.portal.enable = true;
+  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Enable the GNOME Desktop Environment.
   #services.xserver.displayManager.gdm.enable = true;

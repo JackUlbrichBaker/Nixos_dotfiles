@@ -8,7 +8,9 @@ in {
 
   xresources.properties = {
     "Xcursor.size" = 16;
-    "Xft.dpi" = 172; }; imports = [
+    "Xft.dpi" = 96; }; 
+    #"Xft.dpi" = 172; }; 
+    imports = [
        inputs.nix-colors.homeManagerModules.default
        ./features
    ];
@@ -45,7 +47,7 @@ in {
     python312Packages.pysearpc
     rubyPackages_3_3.gdk_pixbuf2
 
-    wayland
+    #wayland
     #hyprland
     hyprlock
 
@@ -64,7 +66,7 @@ in {
     stm32cubemx
 
     openfpgaloader
-    quartus-prime-lite
+    #quartus-prime-lite
     nextpnr
 
     # productivity
@@ -120,7 +122,7 @@ in {
     pipes
     cbonsai
     tree
-    libpcre
+    pcre
   ];
 
   # This value determines the home Manager release that your
