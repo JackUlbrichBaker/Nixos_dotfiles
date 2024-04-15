@@ -29,6 +29,7 @@ in {
     #kicad
     #i3
     polybar
+    picom
 
     # archives
     zip

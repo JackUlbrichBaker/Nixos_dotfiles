@@ -5,10 +5,10 @@
   services.picom = {
     enable = true;
     package = pkgs.callPackage ../packages/compton-unstable.nix { };
-    experimentalBackends = true;
+    #experimentalBackends = true;
 
-    blur = true;
-    blurExclude = [ "window_type = 'dock'" "window_type = 'desktop'" ];
+    #blur = true;
+    #blurExclude = [ "window_type = 'dock'" "window_type = 'desktop'" ];
 
     fade = true;
     fadeDelta = 5;
@@ -17,8 +17,8 @@
     shadowOffsets = [ (-7) (-7) ];
     shadowOpacity = "0.7";
     shadowExclude = [ "window_type *= 'normal' && ! name ~= ''" ];
-    noDockShadow = true;
-    noDNDShadow = true;
+    #noDockShadow = true;
+    #noDNDShadow = true;
 
     activeOpacity = "1.0";
     inactiveOpacity = "0.8";
@@ -27,7 +27,7 @@
     backend = "glx";
     vSync = true;
 
-    extraOptions = ''
+    settings = ''
       shadow-radius = 7;
       clear-shadow = true;
       frame-opacity = 0.7;

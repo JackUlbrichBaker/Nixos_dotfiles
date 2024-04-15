@@ -3,7 +3,7 @@
     ./kitty.nix
     ./nvim.nix
     ./i3.nix
-    ./compton.nix
+    ./picom.nix
     ./polybar.nix
     ./terminal.nix
   ];
