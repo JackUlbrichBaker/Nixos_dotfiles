@@ -1,41 +1,51 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, lib, ... }:
 
-let 
-  mod = "SUPER";
-in {
+{
   xsession.windowManager.i3 = {
     enable = true;
-    config = {
-      modifier = mod;
+    package = pkgs.i3-gaps;
 
-      fonts = ["DejaVu Sans Mono, FontAwesome 6"];
+    config = rec {
+      modifier = "Mod4";
+      bars = [ ];
 
-      keybindings = lib.mkOptionDefault {
-#        "${mod}+p" = "exec ${pkgs.dmenu}/bin/dmenu_run";
-#        "${mod}+x" = "exec sh -c '${pkgs.maim}/bin/maim -s | xclip -selection clipboard -t image/png'";
-#        "${mod}+Shift+x" = "exec sh -c '${pkgs.i3lock}/bin/i3lock -c 222222 & sleep 5 && xset dpms force of'";
+      window.border = 0;
 
-        # Focus
-        "${mod}+j" = "focus left";
-        "${mod}+k" = "focus down";
-        "${mod}+l" = "focus up";
-        "${mod}+semicolon" = "focus right";
-
-        # Move
-        "${mod}+Shift+j" = "move left";
-        "${mod}+Shift+k" = "move down";
-        "${mod}+Shift+l" = "move up";
-        "${mod}+Shift+semicolon" = "move right";
-
-        # My multi monitor setup
-        "${mod}+m" = "move workspace to output DP-2";
-        "${mod}+Shift+m" = "move workspace to output DP-5";
+      gaps = {
+        inner = 15;
+        outer = 5;
       };
 
-      bars = [
+      keybindings = lib.mkOptionDefault {
+        "XF86AudioMute" = "exec amixer set Master toggle";
+        "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
+        "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
+        "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
+        "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
+        "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty";
+        "${modifier}+s" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
+        "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
+        "${modifier}+b" = "exec ${pkgs.google-chrome}/bin/google-chrome-stable";
+        "${modifier}+Shift+x" = "exec systemctl suspend";
+        "${modifier}+c" = "kill";
+      
+      };
+
+      startup = [
         {
-          position = "bottom";
-          #statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${./i3status-rust.toml}";
+          command = "exec i3-msg workspace 1";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "systemctl --user restart polybar.service";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "${pkgs.feh}/bin/feh --bg-scale ~/background.png";
+          always = true;
+          notification = false;
         }
       ];
     };

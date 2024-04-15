@@ -27,7 +27,8 @@ in {
     firefox
     ripgrep
     #kicad
-
+    #i3
+    polybar
 
     # archives
     zip
@@ -44,7 +45,7 @@ in {
     rubyPackages_3_3.gdk_pixbuf2
 
     wayland
-    hyprland
+    #hyprland
     hyprlock
 
     swappy

@@ -9,12 +9,12 @@
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
      };
-     hyprland.url = "github:hyprwm/Hyprland";
+     #hyprland.url = "github:hyprwm/Hyprland";
 
      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { nixpkgs, home-manager, hyprland, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ... }@inputs: {
     pkgs = import nixpkgs { config = { allowUnfree = true; }; };
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       #specialArgs = {inherit inputs; };
