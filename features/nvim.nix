@@ -15,7 +15,7 @@
 
     extraPackages = with pkgs; [
       lua-language-server
-
+      rust-analyzer
       xclip
       wl-clipboard
     ];

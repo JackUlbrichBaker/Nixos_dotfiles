@@ -1,8 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  xsession.windowManager.i3 = {
-    enable = true;
+  xsession.windowManager.i3 = { enable = true;
     package = pkgs.i3-gaps;
 
     config = rec {
@@ -38,19 +37,17 @@
           notification = false;
         }
         {
-          command = "exec kitty workspace 1";
+          command = "exec kitty";
           always = true;
           notification = false;
         }
         {
-          command = "exec google-chrome workspace 2";
+          command = "exec i3-msg 'workspace 2; exec firefox; workspace 1'";
           always = true;
-          notification = false;
         }
         {
-          command = "exec slack workspace 3";
+          command = "exec i3-msg 'workspace 3; exec slack; workspace 1'";
           always = true;
-          notification = false;
         }
         {
           command = "systemctl --user restart polybar.service";

@@ -32,10 +32,10 @@ in {
   services.polybar = {
     enable = true;
 
-    package = pkgs.polybar.override {
-      #i3GapsSupport = true;
-      alsaSupport = true;
-    };
+#    package = pkgs.polybar.override {
+#      #i3GapsSupport = true;
+#      alsaSupport = true;
+#    };
 
     script = "polybar -q -r top & polybar -q -r bottom &";
 

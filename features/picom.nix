@@ -8,8 +8,16 @@
     fade = true;
 
     opacityRules = [ "100:class_g *?= 'Rofi'" ];
-    picom.settings = builtins.readFile ./picom.conf;
+    #settings = builtins.readFile ./picom.conf;
+    settings = {
+      xrender-sync-fence = true;
+      mark-ovredir-focused = false;
+      use-ewmh-active-win = true;
 
+      unredir-if-possible = false;
+      backend = "xrender"; # try "glx" if xrender doesn't help
+      vsync = true;
+    };
 #    settings = ''
 #      corner-radius = 8;
 #      rounded-corners-exclude = [
