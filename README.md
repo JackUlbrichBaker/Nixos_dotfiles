@@ -13,33 +13,30 @@
 
 ## Features
  *  ❄️   Nixos Home-Manager setup
- *  🟢  Hyprland Based Compositor
+ *  🟢  i3 Based 
  *  🐱  Nix-colours - Base16 (Gruvbox)
- *  🌞  Neovim - with Nixos defined config
+ *  🌞  Nixvim with Nixos defined config
 
  ## File Structure
 
 ```
  
- ├── features
- |    ├── nvim
- |    |    ├── plugin
- |    |    |     ├── cmp.lua
- |    |    |     ├── lsp.lua
- |    |    |     ├── other.lua
- |    |    |     ├── lsp.lua
- |    |    |     └── treesitter.lua
- |    |    |
- |    |    └── options.lua
- |    ├── default.nix
- |    ├── hyprland.nix
- |    ├── kitty.nix
- |    ├── nvim.nix
- |    └── terminal.nix
  ├── configuration.nix
- ├── flake.lock
- ├── flake.nix
- ├── hardware-configuration
- └── home.nix
+├── features
+│   ├── default.nix
+│   ├── i3.nix
+│   ├── kitty.nix
+│   ├── nixvim.nix
+│   ├── picom.conf
+│   ├── picom.nix
+│   ├── polybar
+│   │   ├── config.ini
+│   │   └── polybar.nix
+│   └── terminal.nix
+├── flake.lock
+├── flake.nix
+├── hardware-configuration.nix
+├── home.nix
+└── README.md
 
 ```
