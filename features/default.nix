@@ -5,7 +5,7 @@
     ./nixvim.nix
     ./i3.nix
     ./picom.nix
-    ./polybar/polybar.nix
+    #./polybar/polybar.nix
     ./terminal.nix
   ];
 }

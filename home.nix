@@ -29,7 +29,7 @@ in {
     nnn # terminal file manager
     firefox
     ripgrep
-    #kicad
+    kicad
     #i3
     polybar
     picom
