@@ -12,15 +12,15 @@
 
       bars = [ 
       {
-	position = "bottom";
-	colors = {
-	  background = "#${config.colorScheme.palette.base01}";
-	  focusedWorkspace = {
-	    background = "#${config.colorScheme.palette.base0B}";
-	    border = "#${config.colorScheme.palette.base00}";
-	    text = "#${config.colorScheme.palette.base01}";
-	  };
-	};
+#	position = "bottom";
+#	colors = {
+#	  background = "#${config.colorScheme.palette.base01}";
+#	  focusedWorkspace = {
+#	    background = "#${config.colorScheme.palette.base0B}";
+#	    border = "#${config.colorScheme.palette.base00}";
+#	    text = "#${config.colorScheme.palette.base01}";
+#	  };
+#	};
 	}
       ];
       #window.border = 2;
