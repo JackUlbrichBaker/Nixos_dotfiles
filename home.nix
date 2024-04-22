@@ -31,8 +31,11 @@ in {
     ripgrep
     kicad
     #i3
-    polybar
     picom
+    maim
+    xclip
+    xdotool
+    obsidian
 
     # archives
     zip

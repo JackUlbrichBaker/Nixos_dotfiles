@@ -1,6 +1,8 @@
 { pkgs, lib, config, ... }:
 
 {
+
+  programs.i3blocks.enable = false;
   xsession.windowManager.i3 = { 
     enable = true;
     package = pkgs.i3-gaps;
@@ -12,7 +14,14 @@
 
       bars = [ 
       {
-#	position = "bottom";
+	fonts = {
+	  #"pango:DejaVu Sans Mono, FontAwesome 12";
+	  names = [ "pango:DejaVu Sans Mono" " FontAwesome 12" ];
+	  style = "Bold Semi-Condensed";
+	  size = 9.0;
+	};
+	position = "bottom";
+	statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs /home/jack/.config/i3status-rust/config-default.toml";
 #	colors = {
 #	  background = "#${config.colorScheme.palette.base01}";
 #	  focusedWorkspace = {
@@ -20,7 +29,7 @@
 #	    border = "#${config.colorScheme.palette.base00}";
 #	    text = "#${config.colorScheme.palette.base01}";
 #	  };
-#	};
+	#};
 	}
       ];
       #window.border = 2;
@@ -30,12 +39,12 @@
       };
       gaps = {
 	  inner = 15;
-	  outer = 5;
+	  outer = 2;
 	};
 
       assigns = {
-	"2: " = [{ class = "^Firefox$"; }];
-	"3: " = [{ class = "^Slack$"; }];
+	"2" = [{ class = "^firefox$"; }];
+	"3" = [{ class = "^Slack$"; }];
       };
       keybindings = lib.mkOptionDefault {
         "XF86AudioMute" = "exec amixer set Master toggle";
@@ -43,6 +52,8 @@
         "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
         "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
         "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
+
+	"Print" = "exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png";
         "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty";
         "${modifier}+s" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun"; "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
         "${modifier}+b" = "exec ${pkgs.google-chrome}/bin/google-chrome-stable";

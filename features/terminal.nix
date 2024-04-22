@@ -5,6 +5,9 @@
   programs.git = {
     enable = true;
     userName = "JackUlbrichBaker"; userEmail = "jackubaker@gmail.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 
   # config gh to use ssh
