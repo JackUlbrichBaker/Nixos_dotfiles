@@ -68,6 +68,11 @@
           always = true;
           notification = false;
         }
+        {
+          command = "exec i3-msg exec nm-applet'";
+          always = true;
+          notification = true;
+        }
         { command = "exec kitty";
           always = true;
           notification = false;
