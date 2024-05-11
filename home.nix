@@ -36,6 +36,7 @@ in {
     xclip
     xdotool
     obsidian
+    autotiling
 
     # archives
     zip

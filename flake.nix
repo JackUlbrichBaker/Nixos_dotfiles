@@ -11,11 +11,17 @@
      #hyprland.url = "github:hyprwm/Hyprland";
      nixvim.url = "github:nix-community/nixvim";
      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+     nix-matlab = {
+       # Recommended if you also override the default nixpkgs flake, common among
+       # nixos-unstable users:
+       inputs.nixpkgs.follows = "nixpkgs";
+       url = "gitlab:doronbehar/nix-matlab";
+     };
 
      #inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, nixvim, nix-matlab, ... }@inputs: {
     pkgs = import nixpkgs { config = { allowUnfree = true; }; };
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       #specialArgs = {inherit inputs; };

@@ -38,8 +38,8 @@
 	titlebar = false;
       };
       gaps = {
-	  inner = 15;
-	  outer = 2;
+	  inner = 8;
+	  outer = 1;
 	};
 
       assigns = {
@@ -50,16 +50,21 @@
         "XF86AudioMute" = "exec amixer set Master toggle";
         "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
         "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
-        "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
-        "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
 
 	"Print" = "exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png";
+	"Shift + Print" = "exec maim -s | xclip -selection clipboard -t image/png";
         "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty";
         "${modifier}+s" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun"; "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
         "${modifier}+b" = "exec ${pkgs.google-chrome}/bin/google-chrome-stable";
         "${modifier}+Shift+x" = "exec systemctl suspend";
         "${modifier}+c" = "kill";
+        "${modifier}+t" = "split toggle";
+        "${modifier}+Tab" = "workspace back_and_forth";
       
+      };
+      keycodebindings = {
+        "68" = "exec brightnessctl set 4%-";
+        "69" = "exec brightnessctl set 4%+";
       };
 
       startup = [
@@ -69,7 +74,7 @@
           notification = false;
         }
         {
-          command = "exec i3-msg exec nm-applet'";
+          command = "exec i3-msg exec nm-applet & autotiling";
           always = true;
           notification = true;
         }
@@ -78,12 +83,7 @@
           notification = false;
         }
         {
-          command = "exec i3-msg exec firefox'";
-          always = true;
-          notification = false;
-        }
-        {
-          command = "exec i3-msg exec slack'";
+          command = "exec i3-msg exec firefox & slack";
           always = true;
           notification = false;
         }
@@ -111,6 +111,7 @@
     
 
     };
-    extraConfig = "new_window pixel";
+    extraConfig = "new_window pixel
+    for_window [class=.*] layout split toggle";
   };
 }
