@@ -2,21 +2,24 @@
 
 let
   inherit (lib) types mkOption;
-in {
+in
+{
 
- home.username = "jack"; home.homeDirectory = "/home/jack";
+  home.username = "jack";
+  home.homeDirectory = "/home/jack";
 
   xresources.properties = {
     "Xcursor.size" = 16;
-    "Xft.dpi" = 96; }; 
-    #"Xft.dpi" = 172; }; 
-    imports = [
-      inputs.nix-colors.homeManagerModules.default
-      inputs.nixvim.homeManagerModules.nixvim
-       ./features
-   ];
-   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
-   
+    "Xft.dpi" = 96;
+  };
+  #"Xft.dpi" = 172; }; 
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
+    ./features
+  ];
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+
 
 
   # Packages that should be installed to the user profile.
@@ -25,8 +28,8 @@ in {
     # feel free to add your own or remove some of them
     vim
     #neovim
-    neofetch
     nnn # terminal file manager
+    fastfetch
     firefox
     ripgrep
     kicad
@@ -63,7 +66,7 @@ in {
 
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
-    ipcalc  # it is a calculator for the IPv4/v6 addresses
+    ipcalc # it is a calculator for the IPv4/v6 addresses
     nix-output-monitor
 
     # Programming tools
@@ -80,7 +83,7 @@ in {
     glow # markdown previewer in terminal
     doomretro
 
-    btop  # replacement of htop/nmon
+    btop # replacement of htop/nmon
     iftop # network monitoring
 
     # system call monitoring

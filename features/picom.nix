@@ -18,11 +18,11 @@
       backend = "xrender"; # try "glx" if xrender doesn't help
       vsync = true;
     };
-#    settings = ''
-#      corner-radius = 8;
-#      rounded-corners-exclude = [
-#        "class_i = 'polybar'"
-#      ];
-#    '';
+    #    settings = ''
+    #      corner-radius = 8;
+    #      rounded-corners-exclude = [
+    #        "class_i = 'polybar'"
+    #      ];
+    #    '';
   };
 }

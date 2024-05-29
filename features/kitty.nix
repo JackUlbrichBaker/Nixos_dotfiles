@@ -10,7 +10,7 @@
 
         cursor = "#${config.colorscheme.palette.base06}";
         cursor_text_color = "#${config.colorscheme.palette.base00}";
-        
+
         color0 = "#${config.colorScheme.palette.base03}";
         color1 = "#${config.colorScheme.palette.base08}";
         color2 = "#${config.colorScheme.palette.base0B}";

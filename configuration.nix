@@ -6,13 +6,14 @@
 {
   environment.variables.TERMINAL = "kitty";
   environment.variables.BASE16_SHELL = "~/.base16_theme";
-  
+
   imports =
-    [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    [
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
     ];
 
- 
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -26,20 +27,20 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
-  
-  networking.firewall = { 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  networking.firewall = {
     enable = true;
-    allowedTCPPortRanges = [ 
+    allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
-    ];  
-    allowedUDPPortRanges = [ 
+    ];
+    allowedUDPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
-    ];  
+    ];
   };
   services.xserver = {
-   enable = true;
-   windowManager.i3 = {
+    enable = true;
+    windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;
     };
@@ -51,11 +52,11 @@
         #enableXfwm = false;
       };
     };
-      displayManager = {
-        #lightdm.enable = true;
-        defaultSession = "none+i3";
-      };
- };
+    displayManager = {
+      #lightdm.enable = true;
+      defaultSession = "none+i3";
+    };
+  };
 
 
   # Set your time zone.
@@ -75,13 +76,13 @@
     LC_TELEPHONE = "en_AU.UTF-8";
     LC_TIME = "en_AU.UTF-8";
   };
-  
- # Enable the X11 windowing system.
-  
 
-   environment.sessionVariables = {
+  # Enable the X11 windowing system.
 
-  # WLR_NOHARDWARE_CURSORS = "1"
+
+  environment.sessionVariables = {
+
+    # WLR_NOHARDWARE_CURSORS = "1"
     NIXOS_OZONE_WL = "1";
   };
 
@@ -90,15 +91,15 @@
 
     nvidia.modesetting.enable = true;
 
-    };
+  };
 
-    #services.xserver.enable = true;
+  #services.xserver.enable = true;
 
-#    programs.hyprland = {
-#      enable = true;
-#
-#      xwayland.enable = true;
-#    };
+  #    programs.hyprland = {
+  #      enable = true;
+  #
+  #      xwayland.enable = true;
+  #    };
 
   #xdg.portal.enable = true;
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -148,7 +149,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  
+
 
 
   # List packages installed in system profile. To search, run:
@@ -157,22 +158,22 @@
   ];
 
 
-fonts.packages = with pkgs; [
-  noto-fonts
-  noto-fonts-cjk
-  noto-fonts-emoji
-  liberation_ttf
-  fira-code
-  fira-code-symbols
-  mplus-outline-fonts.githubRelease
-  dina-font
-  font-awesome
-  powerline-fonts
-  powerline-symbols
-  proggyfonts
-  nerdfonts
-];
- # Some programs need SUID wrappers, can be configured further or are
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    font-awesome
+    powerline-fonts
+    powerline-symbols
+    proggyfonts
+    nerdfonts
+  ];
+  # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
@@ -183,7 +184,7 @@ fonts.packages = with pkgs; [
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
