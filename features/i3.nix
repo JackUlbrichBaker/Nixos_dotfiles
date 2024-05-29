@@ -74,7 +74,7 @@
           notification = false;
         }
         {
-          command = "exec i3-msg exec nm-applet & autotiling";
+          command = "exec i3-msg exec nm-applet & autotiling & kdeconnect-indicator";
           always = true;
           notification = true;
         }

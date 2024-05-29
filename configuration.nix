@@ -26,9 +26,17 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
   nix.settings.experimental-features = [ "nix-command" "flakes"];
   
+  networking.firewall = { 
+    enable = true;
+    allowedTCPPortRanges = [ 
+      { from = 1714; to = 1764; } # KDE Connect
+    ];  
+    allowedUDPPortRanges = [ 
+      { from = 1714; to = 1764; } # KDE Connect
+    ];  
+  };
   services.xserver = {
    enable = true;
    windowManager.i3 = {

@@ -99,7 +99,7 @@ in {
     iotop # io monitoring
     git
     gh
-    tmux
+    #tmux
     wget
     lolcat
     kitty
@@ -130,7 +130,11 @@ in {
     cbonsai
     tree
     pcre
+    #busybox
+    shotwell
+    libsForQt5.kdeconnect-kde
   ];
+
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
