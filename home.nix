@@ -17,6 +17,7 @@ in
     inputs.nix-colors.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
     ./features
+    .laptop
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
