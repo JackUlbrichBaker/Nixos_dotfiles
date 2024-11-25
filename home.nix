@@ -17,7 +17,7 @@ in
     inputs.nix-colors.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
     ./features
-    .laptop
+    #.laptop.nix
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
@@ -93,6 +93,7 @@ in
     lsof # list open files
 
     # system tools
+    nvtopPackages.full
     sysstat
     lm_sensors # for `sensors` command
     ethtool
@@ -138,7 +139,6 @@ in
     shotwell
     libsForQt5.kdeconnect-kde
   ];
-
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

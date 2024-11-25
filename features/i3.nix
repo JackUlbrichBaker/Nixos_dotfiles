@@ -64,8 +64,8 @@
 
       };
       keycodebindings = {
-        "68" = "exec brightnessctl set 4%-";
-        "69" = "exec brightnessctl set 4%+";
+        "XF86MonBrightnessUp" = "exec brightnessctl set 4%-";
+        "XF86MonBrightnessDown" = "exec brightnessctl set 4%+";
       };
 
       startup = [
