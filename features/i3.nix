@@ -51,8 +51,8 @@
         "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
         "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
 
-        "XF86MonBrightnessUp" = "exec brightnessctl set 4%-";
-        "XF86MonBrightnessDown" = "exec brightnessctl set 4%+";
+        "XF86MonBrightnessUp" = "exec brightnessctl set 2%-";
+        "XF86MonBrightnessDown" = "exec brightnessctl set 2%+";
 
         "Print" = "exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png";
         "Shift + Print" = "exec maim -s | xclip -selection clipboard -t image/png";

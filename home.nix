@@ -22,7 +22,6 @@ in
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
 
-
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # here is some command line tools I use frequently
@@ -138,6 +137,9 @@ in
     #busybox
     shotwell
     libsForQt5.kdeconnect-kde
+    blueman
+
+    texliveTeTeX
   ];
 
   # This value determines the home Manager release that your

@@ -107,7 +107,7 @@ services.tlp = {
 
   hardware = {
     opengl.enable = true;
-
+    bluetooth.enable = true;
     nvidia.modesetting.enable = true;
 
   };
