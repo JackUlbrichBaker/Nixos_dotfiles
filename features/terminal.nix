@@ -83,6 +83,9 @@
 
     bashrcExtra = ''
             export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+	    export PDK_ROOT=/opt/pdk/share/pdk
+	    export LD_LIBRARY_PATH=/opt/eda/lib
+	    export PATH=/opt/eda/bin:$HOME/.local/bin:$PATH
 
             function mkcd ()
             {
@@ -95,6 +98,8 @@
     # set some aliases, feel free to add more or remove some
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --impure --flake /home/jack/dotfiles/#default";
+      gc = "git commit -am";
+      gp = "git push";
     };
   };
 }

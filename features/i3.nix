@@ -86,7 +86,7 @@
           notification = false;
         }
         {
-          command = "exec i3-msg exec firefox & slack";
+          command = "exec i3-msg exec firefox";
           always = true;
           notification = false;
         }

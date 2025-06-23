@@ -27,6 +27,7 @@ in
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
     vim
+    pkgs.devenv
     #neovim
     nnn # terminal file manager
     fastfetch
@@ -72,7 +73,6 @@ in
     # Programming tools
     stm32flash
     stm32loader
-    stm32cubemx
 
     openfpgaloader
     quartus-prime-lite
@@ -139,10 +139,19 @@ in
     libsForQt5.kdeconnect-kde
     blueman
 
-    texliveTeTeX
-  ];
+    #texliveTeTeX
+    texlive.combined.scheme-full
+    zathura
 
-  # This value determines the home Manager release that your
+
+    #ASIC Stuff
+    xschem
+    ngspice
+    magic-vlsi
+    gnumake42
+    lsb-release
+  ];
+# This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards
   # incompatible changes.
