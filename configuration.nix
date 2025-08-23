@@ -108,6 +108,7 @@ services.tlp = {
   hardware = {
     opengl.enable = true;
     bluetooth.enable = true;
+    bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
     nvidia.modesetting.enable = true;
 
   };

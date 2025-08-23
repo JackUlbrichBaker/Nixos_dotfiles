@@ -73,6 +73,7 @@ in
     # Programming tools
     stm32flash
     stm32loader
+    stm32cubemx
 
     openfpgaloader
     quartus-prime-lite
@@ -99,6 +100,7 @@ in
     pciutils # lspci
     usbutils # lsusb
     nix-output-monitor
+    feh
 
     iotop # io monitoring
     git
@@ -150,6 +152,10 @@ in
     magic-vlsi
     gnumake42
     lsb-release
+
+    #SDR Stuff
+    satdump
+    sdrpp
   ];
 # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

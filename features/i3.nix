@@ -90,6 +90,11 @@
           always = true;
           notification = false;
         }
+        {
+          command = "${pkgs.feh}/bin/feh --bg-fill ~/wizard_bg.jpg ";
+          always = true;
+          notification = false;
+        }
       ];
       colors = {
         background = "#${config.colorScheme.palette.base01}";
