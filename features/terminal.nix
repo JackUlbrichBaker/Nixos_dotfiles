@@ -1,7 +1,7 @@
 { config, input, pkgs, ... }:
 
 {
-  # basic configuration of git, please change to your own
+# basic configuration of git, please change to your own
   programs.git = {
     enable = true;
     userName = "JackUlbrichBaker";
@@ -11,7 +11,7 @@
     };
   };
 
-  # config gh to use ssh
+# config gh to use ssh
   programs.gh = {
     enable = true;
     settings = {
@@ -19,10 +19,10 @@
     };
   };
 
-  # starship - an customizable prompt for any shell
+# starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;
-    # custom settings
+# custom settings
     settings = {
       add_newline = false;
       aws.disabled = true;
@@ -38,43 +38,43 @@
     keyMode = "vi";
     terminal = "screen-256color";
     extraConfig = ''
-            bind s split-window -h      
-            bind v split-window -v
-            setw -g window-status-format #[bg=NONE]#[fg=colour240] #I #[bg=NONE]#[fg=colour240] #W "
-            setw -g window-status-current-format "#[fg=colour246]#[bg=NONE] #I #[bg=NONE]#[fg=colour246] #W#F "
+      bind s split-window -h      
+      bind v split-window -v
+      setw -g window-status-format #[bg=NONE]#[fg=colour240] #I #[bg=NONE]#[fg=colour240] #W "
+      setw -g window-status-current-format "#[fg=colour246]#[bg=NONE] #I #[bg=NONE]#[fg=colour246] #W#F "
 
-            bind < resize-pane -L 10
-            bind > resize-pane -R 10
-            bind + resize-pane -U 5
-            bind - resize-pane -D 5
+      bind < resize-pane -L 10
+      bind > resize-pane -R 10
+      bind + resize-pane -U 5
+      bind - resize-pane -D 5
 
-      # Activity
-            set -g monitor-activity on
-            set -g visual-activity on
+# Activity
+      set -g monitor-activity on
+      set -g visual-activity on
 
-      ### Status Bar Design ###
-            set -g status-style bg=default
-            set -g status-style fg=white
-            set -g window-status-activity-style fg=black 
-            set -g window-status-activity-style bold
-            set -g pane-active-border-style fg=colour79
+### Status Bar Design ###
+      set -g status-style bg=default
+      set -g status-style fg=white
+      set -g window-status-activity-style fg=black 
+      set -g window-status-activity-style bold
+      set -g pane-active-border-style fg=colour79
 
-      # Tmux message prompt
-            set -g message-style fg=colour209 
-            set -g message-style bold
-            set -g message-style bg=colour16
+# Tmux message prompt
+      set -g message-style fg=colour209 
+      set -g message-style bold
+      set -g message-style bg=colour16
 
-            set -g status-justify centre
-            set -g status-left '#[fg=colour221,bold]   #S '
-            set -g window-status-format "#[fg=colour79] #I #W "
-            set -g window-status-current-format "#[fg=colour74,bg=colour16,bold] #I #W "
-            set -g status-right '#[fg=colour209]%a %b %d ' # %l:%M %p'
+      set -g status-justify centre
+      set -g status-left '#[fg=colour221,bold]   #S '
+      set -g window-status-format "#[fg=colour79] #I #W "
+      set -g window-status-current-format "#[fg=colour74,bg=colour16,bold] #I #W "
+      set -g status-right '#[fg=colour209]%a %b %d ' # %l:%M %p'
 
 
-      # Colorscheme
-            set -g @catppuccin_flavour 'mocha'
+# Colorscheme
+      set -g @catppuccin_flavour 'mocha'
 
-    '';
+      '';
   };
 
   programs.bash = {
@@ -82,20 +82,19 @@
     enableCompletion = true;
 
     bashrcExtra = ''
-            export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-	    export PDK_ROOT=/opt/pdk/share/pdk
-	    export LD_LIBRARY_PATH=/opt/eda/lib
-	    export PATH=/opt/eda/bin:$HOME/.local/bin:$PATH
+      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      export PDK_ROOT=/opt/pdk/share/pdk
+      export LD_LIBRARY_PATH=/opt/eda/lib
+      export PATH=/opt/eda/bin:$HOME/.local/bin:$PATH
 
-            function mkcd ()
-            {
-      	command mkdir $1 && cd $1
-            }
-          if [ -z "$TMUX" ]; then tmux; fi
-            fastfetch 
-      	'';
+      function mkcd ()
+      {
+	command mkdir $1 && cd $1
+      }
+    if [ -z "$TMUX" ]; then tmux; fi
+      fastfetch 
+	'';
 
-    # set some aliases, feel free to add more or remove some
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --impure --flake /home/jack/dotfiles/#default";
       gc = "git commit -am";

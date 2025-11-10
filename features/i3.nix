@@ -34,11 +34,11 @@
       ];
       #window.border = 2;
       window = {
-        border = 2;
+        border = 1;
         titlebar = false;
       };
       gaps = {
-        inner = 8;
+        inner = 4;
         outer = 1;
       };
 

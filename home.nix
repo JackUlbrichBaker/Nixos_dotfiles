@@ -34,6 +34,11 @@ in
     firefox
     ripgrep
     kicad
+    kikit
+    kicadAddons.kikit
+    kicadAddons.kikit-library
+
+
     #i3
     picom
     maim
@@ -157,7 +162,8 @@ in
     sdrpp
 
     steam
-
+    kiwix
+    figlet
   ];
 
   
